@@ -22,4 +22,10 @@ public class ConversorController {
     public ResponseEntity<ConvertResponse> convert(@RequestBody ConvertRequest dto){
         return ResponseEntity.status(HttpStatus.CREATED).body(this.conversorService.convert(dto));
     }
+
+    @PostMapping("/example")
+    public ResponseEntity<Integer> example(@RequestParam int a,
+                                                 @RequestParam int b){
+        return ResponseEntity.status(HttpStatus.CREATED).body(this.conversorService.example(a, b));
+    }
 }
